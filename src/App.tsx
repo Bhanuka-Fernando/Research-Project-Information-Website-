@@ -57,12 +57,33 @@ export default function App() {
   ];
 
   const documents = [
-    { name: "Project Charter", status: "Pending upload", type: "Group" },
-    { name: "Proposal Document", status: "Pending upload", type: "Group" },
-    { name: "Status Document I", status: "Pending upload", type: "Individual" },
-    { name: "Status Document II", status: "Pending upload", type: "Individual" },
-    { name: "Research Paper", status: "Pending upload", type: "Group" },
-    { name: "Final Report", status: "Pending upload", type: "Group + Individual" },
+    {
+      name: "Topic Assesment",
+      status: "Available now",
+      link: "/documents/Project Charter.pdf",
+    },
+    {
+      name: "Proposal Document",
+      status: "Available now",
+      link: "https://drive.google.com/drive/folders/1r_Que3HUILaKIgagPlqBBXwckhJnfJXP?usp=sharing",
+    },
+    {
+      name: "Checklist I",
+      status: "Available now",
+      link: "/documents/Checklist 1.pdf",
+    },
+    {
+      name: "Checklist II",
+      status: "Available now",
+      link: "https://drive.google.com/file/d/1B43ACW2cfO18gUUoXfiP8iZVk2SbNYCl/view?usp=sharing",
+    },
+    {
+      name: "Checklist III",
+      status: "Available now",
+      link: "/documents/Checklist 3.pdf",
+    },
+    { name: "Research Paper", status: "Pending upload" },
+    { name: "Final Report", status: "Pending upload" },
   ];
 
   const presentations = [
@@ -75,15 +96,17 @@ export default function App() {
     },
     {
       name: "Progress Presentation I",
-      status: "Pending upload",
+      status: "Available now",
       type: "Group",
       note: "Early prototype walkthrough and validation progress update.",
+      link: "/presentations/Progress Presentation.pptx",
     },
     {
       name: "Progress Presentation II",
-      status: "Pending upload",
+      status: "Available now",
       type: "Group",
       note: "Integrated system presentation with refined model outcomes.",
+      link: "/presentations/Progress Presentation 02.pptx",
     },
     {
       name: "Final Presentation",
@@ -114,21 +137,21 @@ export default function App() {
       name: "Sachintha P.W.E",
       role: "IT21390050",
       note: "Focused on intelligent farm monitoring and full-system integration.",
-      email: "Email :Add email",
+      email: "Email : sachintha@gmail.com",
       photo: sachin,
     },
     {
       name: "Imalka T A D D",
       role: "IT22312358",
       note: "Focused on analytics, evaluation workflows, and application support.",
-      email: "Email :Add email",
+      email: "Email :imalkatad@gmail.com",
       photo: imalka,
     },
     {
       name: "Thennakon G H",
       role: "IT22332158",
       note: "Focused on sensing pipelines, data capture, and validation support.",
-      email: "Email :Add email",
+      email: "Email : geshikathennakon@gmail.com",
       photo: thennakon,
     },
     {
@@ -354,8 +377,9 @@ export default function App() {
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
                   href="#domain"
-                  className="rounded-full bg-emerald-700 px-7 py-3.5 text-sm font-semibold text-white shadow-[0_16px_30px_rgba(34,110,58,0.28)] transition hover:bg-emerald-800"
+                  className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-7 py-3.5 text-sm font-semibold text-emerald-800 shadow-[0_8px_20px_rgba(31,106,57,0.08)] transition hover:border-emerald-300 hover:bg-emerald-50"
                 >
+                  <span className="h-2 w-2 rounded-full bg-emerald-500" />
                   Explore Research
                 </a>
                 <a
@@ -691,9 +715,8 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="hidden grid-cols-[1.4fr_0.8fr_0.8fr] border-b border-slate-100 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-slate-500 md:grid">
+              <div className="hidden grid-cols-[1.7fr_0.8fr] border-b border-slate-100 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-slate-500 md:grid">
                 <div>Document</div>
-                <div>Category</div>
                 <div>Status</div>
               </div>
 
@@ -701,7 +724,7 @@ export default function App() {
                 {documents.map((doc) => (
                   <div
                     key={doc.name}
-                    className="grid gap-4 px-6 py-5 transition hover:bg-emerald-50/40 md:grid-cols-[1.4fr_0.8fr_0.8fr] md:px-8"
+                    className="grid gap-4 px-6 py-5 transition hover:bg-emerald-50/40 md:grid-cols-[1.7fr_0.8fr] md:px-8"
                   >
                     <div className="flex items-center gap-4">
                       <div className="flex h-13 w-13 shrink-0 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#edf9ef,#d8f0de)] text-sm font-bold text-emerald-800 shadow-sm">
@@ -716,20 +739,6 @@ export default function App() {
                           Document
                         </p>
                         <p className="text-lg font-semibold text-slate-900">{doc.name}</p>
-                        <p className="mt-1 text-sm text-slate-500">
-                          Academic submission prepared for the project portfolio.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center">
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400 md:hidden">
-                          Category
-                        </p>
-                        <span className="inline-flex rounded-full bg-slate-50 px-3 py-1 text-sm font-medium text-slate-700 ring-1 ring-slate-200">
-                          {doc.type}
-                        </span>
                       </div>
                     </div>
 
@@ -738,10 +747,22 @@ export default function App() {
                         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400 md:hidden">
                           Status
                         </p>
-                        <span className="inline-flex items-center gap-2 rounded-full bg-amber-50 px-3.5 py-1.5 text-sm font-semibold text-amber-700 ring-1 ring-amber-100">
-                          <span className="h-2 w-2 rounded-full bg-amber-500" />
-                          {doc.status}
-                        </span>
+                        {doc.link ? (
+                          <a
+                            href={doc.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2 text-sm font-semibold text-emerald-800 shadow-[0_8px_20px_rgba(31,106,57,0.08)] transition hover:border-emerald-300 hover:bg-emerald-50"
+                          >
+                            <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                            View Document
+                          </a>
+                        ) : (
+                          <span className="inline-flex items-center gap-2 rounded-full bg-amber-50 px-3.5 py-1.5 text-sm font-semibold text-amber-700 ring-1 ring-amber-100">
+                            <span className="h-2 w-2 rounded-full bg-amber-500" />
+                            {doc.status}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -762,33 +783,39 @@ export default function App() {
                 </p>
               </div>
 
-              <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              <div className="rounded-[2.4rem] border border-emerald-100/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(242,251,244,0.7))] p-5 shadow-[0_24px_70px_rgba(39,83,49,0.08)] md:p-8">
+                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
                 {presentations.map((item) => (
                   <article
                     key={item.name}
-                    className="rounded-[2rem] border border-emerald-100/80 bg-white p-6 shadow-[0_20px_50px_rgba(39,83,49,0.08)] transition hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(39,83,49,0.12)]"
+                    className="flex h-full flex-col rounded-[2rem] border border-emerald-100/80 bg-white p-6 shadow-[0_18px_45px_rgba(39,83,49,0.08)] transition hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(39,83,49,0.12)] md:p-7"
                   >
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#edf9ef,#d8f0de)] text-sm font-bold text-emerald-800 shadow-sm">
-                      {item.name
-                        .split(" ")
-                        .slice(0, 2)
-                        .map((word) => word.charAt(0))
-                        .join("")}
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#edf9ef,#d8f0de)] text-sm font-bold text-emerald-800 shadow-sm">
+                        {item.name
+                          .split(" ")
+                          .slice(0, 2)
+                          .map((word) => word.charAt(0))
+                          .join("")}
+                      </div>
+                      <span className="inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-emerald-700 ring-1 ring-emerald-100">
+                        {item.type}
+                      </span>
                     </div>
-                    <h4 className="mt-5 text-2xl font-semibold leading-snug text-slate-900">
+                    <h4 className="mt-6 text-[1.85rem] font-semibold leading-tight text-slate-900">
                       {item.name}
                     </h4>
-                    <p className="mt-3 text-sm leading-7 text-slate-600">{item.note}</p>
+                    <p className="mt-4 flex-1 text-sm leading-7 text-slate-600">{item.note}</p>
 
-                    <div className="mt-6 flex flex-wrap gap-3">
+                    <div className="mt-8 flex flex-wrap gap-3 border-t border-slate-100 pt-5">
                       {item.link ? (
                         <a
                           href={item.link}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(31,106,57,0.18)] transition hover:bg-emerald-700"
+                          className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2 text-sm font-semibold text-emerald-800 shadow-[0_8px_20px_rgba(31,106,57,0.08)] transition hover:border-emerald-300 hover:bg-emerald-50"
                         >
-                          <span className="h-2 w-2 rounded-full bg-white/90" />
+                          <span className="h-2 w-2 rounded-full bg-emerald-500" />
                           View Presentation
                         </a>
                       ) : (
@@ -800,6 +827,7 @@ export default function App() {
                     </div>
                   </article>
                 ))}
+                </div>
               </div>
             </div>
           </div>
@@ -857,14 +885,14 @@ export default function App() {
                     General Email
                   </p>
                   <p className="mt-2 text-xl font-semibold text-slate-900">
-                    smartlettuceresearch@example.com
+                    smartlettuceresearch@gmail.com
                   </p>
                 </div>
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
                     Phone
                   </p>
-                  <p className="mt-2 text-xl font-semibold text-slate-900">+94 XX XXX XXXX</p>
+                  <p className="mt-2 text-xl font-semibold text-slate-900">+94 77 527 6952</p>
                 </div>
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
