@@ -137,14 +137,14 @@ export default function App() {
       name: "Sachintha P.W.E",
       role: "IT21390050",
       note: "Focused on intelligent farm monitoring and full-system integration.",
-      email: "Email : sachintha@gmail.com",
+      email: "Email : isurusachin123@gmail.com",
       photo: sachin,
     },
     {
       name: "Imalka T A D D",
       role: "IT22312358",
       note: "Focused on analytics, evaluation workflows, and application support.",
-      email: "Email :imalkatad@gmail.com",
+      email: "Email :dulanimalka1@gmail.com",
       photo: imalka,
     },
     {
