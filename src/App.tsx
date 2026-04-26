@@ -326,8 +326,13 @@ export default function App() {
       <header className="sticky top-0 z-50 border-b border-emerald-100/80 bg-white/86 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-6">
           <a href="#home" className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#1f7a3f,#76c27c)] text-lg font-semibold text-white shadow-[0_12px_30px_rgba(71,145,89,0.28)]">
-              QL
+            <div
+              aria-hidden="true"
+              className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#14532d_0%,#1f7a3f_46%,#8bd18a_100%)] text-lg font-extrabold text-white shadow-[0_12px_30px_rgba(71,145,89,0.28),inset_0_1px_0_rgba(255,255,255,0.36)] ring-1 ring-emerald-200/80"
+            >
+              <span className="absolute -right-2 -top-2 h-7 w-7 rounded-full bg-white/22 blur-[1px]" />
+              <span className="absolute bottom-1.5 left-1.5 h-4 w-6 rotate-[-28deg] rounded-[999px_999px_999px_0] bg-lime-200/42" />
+              <span className="relative tracking-[-0.03em] drop-shadow-sm">QL</span>
             </div>
             <div>
               <p className="font-['Manrope',sans-serif] text-base font-extrabold tracking-[0.08em] text-emerald-900 uppercase">
